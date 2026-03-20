@@ -1,0 +1,123 @@
+{% extends 'website/index.html' %}
+{% load static %}
+
+{% block title %}Payroll Services - FAMT Global{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-24 text-center">
+  <h1 class="text-5xl font-extrabold mb-6">Payroll Services</h1>
+  <p class="text-lg max-w-2xl mx-auto mb-8">
+    Simplify your payroll with accurate processing, compliance, and timely salary management.
+  </p>
+
+  <a href="{% url 'contact' %}" 
+     class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold shadow hover:bg-gray-100 transition">
+     Get Free Consultation
+  </a>
+</section>
+
+<!-- TRUST BADGES -->
+<section class="py-10 text-center bg-gray-100">
+  <p class="text-gray-700 font-semibold">
+    ✅ 11+ Years Experience &nbsp; • &nbsp; ✅ 500+ Clients &nbsp; • &nbsp; 🌍 Global Service
+  </p>
+</section>
+
+<!-- SERVICES DETAILS -->
+<section class="py-20 max-w-6xl mx-auto px-4">
+
+  <h2 class="text-3xl font-bold text-center mb-12">What We Offer</h2>
+
+  <div class="grid md:grid-cols-3 gap-10">
+
+    <div class="p-6 shadow-lg rounded-xl bg-white">
+      <h3 class="text-xl font-bold mb-3">Salary Processing</h3>
+      <p class="text-gray-600">Accurate and timely salary calculations for employees.</p>
+    </div>
+
+    <div class="p-6 shadow-lg rounded-xl bg-white">
+      <h3 class="text-xl font-bold mb-3">Compliance Management</h3>
+      <p class="text-gray-600">Stay compliant with tax laws, PF, ESI, and regulations.</p>
+    </div>
+
+    <div class="p-6 shadow-lg rounded-xl bg-white">
+      <h3 class="text-xl font-bold mb-3">Payslip Generation</h3>
+      <p class="text-gray-600">Automated payslips and reports for employees.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PRICING -->
+<section class="py-20 bg-gray-50 text-center">
+
+  <h2 class="text-3xl font-bold mb-12">Simple Pricing</h2>
+
+  <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-4">
+
+    <div class="bg-white p-8 rounded-xl shadow-lg">
+      <h3 class="text-xl font-bold mb-4">Starter</h3>
+      <p class="text-3xl font-bold mb-4">₹999/mo</p>
+      <p class="text-gray-600 mb-6">Up to 5 employees</p>
+      <a href="{% url 'contact' %}" class="bg-blue-600 text-white px-6 py-2 rounded-full">Choose Plan</a>
+    </div>
+
+    <div class="bg-blue-600 text-white p-8 rounded-xl shadow-lg scale-105">
+      <h3 class="text-xl font-bold mb-4">Business</h3>
+      <p class="text-3xl font-bold mb-4">₹2499/mo</p>
+      <p class="mb-6">Up to 20 employees</p>
+      <a href="{% url 'contact' %}" class="bg-white text-blue-600 px-6 py-2 rounded-full">Choose Plan</a>
+    </div>
+
+    <div class="bg-white p-8 rounded-xl shadow-lg">
+      <h3 class="text-xl font-bold mb-4">Enterprise</h3>
+      <p class="text-3xl font-bold mb-4">Custom</p>
+      <p class="text-gray-600 mb-6">Unlimited employees</p>
+      <a href="{% url 'contact' %}" class="bg-blue-600 text-white px-6 py-2 rounded-full">Contact Us</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-20 max-w-6xl mx-auto px-4 text-center">
+
+  <h2 class="text-3xl font-bold mb-12">Why Choose FAMT Global?</h2>
+
+  <div class="grid md:grid-cols-3 gap-10">
+
+    <div>
+      <h3 class="font-bold mb-2">Expert Team</h3>
+      <p class="text-gray-600">Experienced professionals handling payroll efficiently.</p>
+    </div>
+
+    <div>
+      <h3 class="font-bold mb-2">100% Compliance</h3>
+      <p class="text-gray-600">Stay worry-free with complete legal compliance.</p>
+    </div>
+
+    <div>
+      <h3 class="font-bold mb-2">Time Saving</h3>
+      <p class="text-gray-600">Focus on business while we handle payroll.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="bg-blue-600 text-white py-16 text-center">
+  <h2 class="text-3xl font-bold mb-4">Ready to Simplify Payroll?</h2>
+  <p class="mb-6">Get started with our expert payroll services today.</p>
+
+  <a href="{% url 'contact' %}" 
+     class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold shadow">
+     Contact Us Now
+  </a>
+</section>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'website/index.html' %}
+{% load static %}
+{% block content %}
+
+<!-- HERO -->
+<style>
+  .management-bg {
+    background-image: url("{% static 'image/itin2.jpg' %}");
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+
+<section class="relative py-32 text-white text-center management-bg">
+
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="relative z-10">
+    <h1 class="text-5xl font-bold">Management Services</h1>
+    <p>Streamline operations and drive business efficiency</p>
+  </div>
+
+</section>
+
+<!-- CONTENT -->
+<section class="py-24 bg-white">
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+    <div>
+      <h2 class="text-4xl font-bold mb-6">Optimize Your Business Operations</h2>
+      <p class="text-gray-600 mb-6">
+        Our management services help businesses improve efficiency, enhance productivity, and implement scalable systems for long-term growth.
+      </p>
+
+      <ul class="space-y-3 text-gray-600">
+        <li>✔ Business process optimization</li>
+        <li>✔ Performance management</li>
+        <li>✔ Operational strategy</li>
+        <li>✔ Team & workflow management</li>
+      </ul>
+    </div>
+
+    <img src="{% static 'image/manage.jpg' %}" class="rounded-xl shadow-lg">
+
+  </div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="py-24 bg-gray-100 text-center">
+
+  <h2 class="text-4xl font-bold mb-10">Our Expertise</h2>
+
+  <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+    <div class="p-6 shadow rounded-xl">Business Strategy</div>
+    <div class="p-6 shadow rounded-xl">Process Automation</div>
+    <div class="p-6 shadow rounded-xl">Team Management</div>
+    <div class="p-6 shadow rounded-xl">Growth Planning</div>
+
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-blue-600 text-white text-center">
+  <h2 class="text-4xl font-bold mb-6">Improve Your Business Performance</h2>
+  <a href="{% url 'contact' %}" class="bg-white text-blue-600 px-8 py-3 rounded-lg">
+    Get Started
+  </a>
+</section>
+
+{% endblock %}

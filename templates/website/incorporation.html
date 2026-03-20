@@ -1,21 +1,34 @@
+
 {% extends 'website/index.html' %}
 {% block content %}
+{% load static %}
 
-<section class="relative py-32 text-white text-center">
-<div class="absolute inset-0 bg-cover bg-center"
-style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216');"></div>
-<div class="absolute inset-0 bg-black/70"></div>
+{% load static %}
 
-<div class="relative z-10 max-w-3xl mx-auto">
-<h1 class="text-5xl font-bold mb-6">US Incorporation</h1>
-<p>Launch your US business from anywhere with complete legal compliance.</p>
-</div>
+<style>
+  .incorporation-bg {
+    background-image: url("{% static 'image/incop3.jpg' %}");
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+
+<section class="relative py-32 text-white text-center incorporation-bg">
+
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto">
+    <h1 class="text-5xl font-bold mb-6">US Incorporation</h1>
+    <p>Launch your US business from anywhere with complete legal compliance.</p>
+  </div>
+
 </section>
 
 <section class="py-24 bg-white">
 <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-<img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f" class="rounded-xl shadow-lg">
+
+<img src="{% static 'image/incop2.jpg' %}" class="rounded-xl shadow-lg">
 
 <div>
 <h2 class="text-4xl font-bold mb-6">Build Your Global Business</h2>

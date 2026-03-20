@@ -1,15 +1,26 @@
 {% extends 'website/index.html' %}
 {% block content %}
+{% load static %}
 
-<section class="relative py-32 text-white text-center">
-<div class="absolute inset-0 bg-cover bg-center"
-style="background-image:url('https://images.unsplash.com/photo-1554224154-26032ffc0d07');"></div>
-<div class="absolute inset-0 bg-black/70"></div>
+{% load static %}
 
-<div class="relative z-10">
-<h1 class="text-5xl font-bold">Bookkeeping Services</h1>
-<p>Accurate financial records for smarter business decisions</p>
-</div>
+<style>
+  .bookkeeping-bg {
+    background-image: url("{% static 'image/book3.jpg' %}");
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+
+<section class="relative py-32 text-white text-center bookkeeping-bg">
+
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="relative z-10">
+    <h1 class="text-5xl font-bold">Bookkeeping Services</h1>
+    <p>Accurate financial records for smarter business decisions</p>
+  </div>
+
 </section>
 
 <section class="py-24 bg-white">
@@ -31,7 +42,7 @@ We manage your financial records, ensuring accuracy, compliance, and real-time i
 
 </div>
 
-<img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85" class="rounded-xl shadow-lg">
+<img src="{% static 'image/book2.jpg' %}" class="rounded-xl shadow-lg">
 
 </div>
 

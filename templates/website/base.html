@@ -15,6 +15,15 @@
 <meta name="keywords" content="finance consulting, accounting services, taxation services, bookkeeping, US tax filing, CPA services, business consulting">
 
 <meta name="author" content="FAMT Global">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HBWPP21RVD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HBWPP21RVD');
+</script>
 
 <meta name="robots" content="index, follow">
 
@@ -150,8 +159,10 @@ box-shadow:0 0 0 2px rgba(37,99,235,0.2);
 <!-- LOGO -->
 <div class="flex items-center space-x-3 group">
 
-<img src="{% static 'image/famt3.png' %}" 
-     class="w-11 transition duration-300 group-hover:scale-110">
+<a href="{% url 'home' %}" class="group">
+  <img src="{% static 'image/famt3.png' %}" 
+       class="w-11 transition duration-300 group-hover:scale-110">
+</a>
 
 <div class="flex flex-col leading-tight">
 
@@ -160,7 +171,7 @@ FAMT Global
 </h1>
 
 <div class="text-xs text-gray-500">
-Finance • Accounting • Taxation
+Finance • Accounting • Management • Taxation
 </div>
 
 </div>
@@ -182,22 +193,27 @@ About
 </a>
 
 
-<!-- SERVICES DROPDOWN -->
-<div class="relative group">
+<div class="relative group inline-block">
 
 <button class="flex items-center gap-1 hover:text-blue-600 transition">
 Services
 <i data-lucide="chevron-down" class="w-4 h-4"></i>
 </button>
 
+<!-- HOVER BRIDGE -->
+<div class="absolute left-0 top-full w-full h-2"></div>
+
 <!-- DROPDOWN -->
-<div class="absolute left-0 top-full mt-3 w-72 bg-white shadow-xl rounded-xl p-3 
+<div class="absolute left-0 top-full w-72 bg-white shadow-xl rounded-xl p-3 
 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-transition duration-300 z-50 border">
+transition duration-200 z-50 border">
 
 <a href="{% url 'incorporation' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">US Incorporation</a>
 
 <a href="{% url 'bookkeeping' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Bookkeeping</a>
+
+<a href="{% url 'payroll' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Payroll Services</a>
+<a href="{% url 'management' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Management</a>
 
 <a href="{% url 'itin' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">ITIN Services</a>
 
@@ -212,7 +228,6 @@ transition duration-300 z-50 border">
 </div>
 
 </div>
-
 <a href="{% url 'who_we_help' %}" class="hover:text-blue-600 transition">
 Who We Help
 </a>
@@ -752,6 +767,7 @@ Zero-obligation strategy session
 <option value="Accounting">Accounting</option>
 <option value="Taxation">Taxation</option>
 <option value="General Inquiry">General Inquiry</option>
+<option value="General Inquiry">Management</option>
 
 </select>
 

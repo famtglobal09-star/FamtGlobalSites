@@ -15,7 +15,6 @@ from consulting_site.forms import CallbackForm
 
 
 def home(request):
-
     form = CallbackForm()
 
     if request.method == "POST":
@@ -23,9 +22,10 @@ def home(request):
 
         if form.is_valid():
             form.save()
-            return redirect('/?success=1')
+            messages.success(request, "Thank you! We will reach you shortly.")
+            return redirect('home')  # use URL name if possible
 
-    return render(request,'website/base.html',{'form':form})
+    return render(request, 'website/base.html', {'form': form})
 
 def incorporation(request):
     return render(request,'website/incorporation.html')
@@ -67,6 +67,11 @@ def terms(request):
     return render(request,'website/terms.html')
 def disclaimer(request):
     return render(request, 'website/disclaimer.html')
+def payroll(request):
+    return render(request, 'website/payroll.html')
+def management(request):
+    return render(request,'website/management.html')
+
 
 
 from django.http import HttpResponse

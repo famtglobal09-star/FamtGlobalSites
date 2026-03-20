@@ -5,6 +5,59 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- BASIC SEO -->
+<title>FAMT Global | Finance, Accounting, Management & Taxation Services</title>
+<meta name="description" content="FAMT Global provides expert finance, accounting, taxation, and business consulting services. Register your company, manage taxes, and grow your business with us.">
+<meta name="keywords" content="FAMT Global, finance services, accounting, taxation, GST, company registration, business consulting, India">
+<meta name="author" content="FAMT Global">
+<meta name="robots" content="index, follow">
+
+<!-- MOBILE OPTIMIZATION -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CANONICAL -->
+<link rel="canonical" href="https://famtglobal.com/">
+
+<!-- FAVICON -->
+<link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+
+<!-- OPEN GRAPH (FACEBOOK, LINKEDIN) -->
+<meta property="og:title" content="FAMT Global - Finance & Tax Experts">
+<meta property="og:description" content="Professional accounting, taxation, and business consulting services.">
+<meta property="og:image" content="https://famtglobal.com/static/images/og-image.jpg">
+<meta property="og:url" content="https://famtglobal.com/">
+<meta property="og:type" content="website">
+
+<!-- TWITTER SEO -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAMT Global">
+<meta name="twitter:description" content="Expert finance and taxation services.">
+<meta name="twitter:image" content="https://famtglobal.com/static/images/og-image.jpg">
+
+<!-- GEO TAGS (OPTIONAL FOR LOCAL SEO) -->
+<meta name="geo.region" content="IN">
+<meta name="geo.placename" content="India">
+
+<!-- BUSINESS CONTACT -->
+<meta name="contact" content="admin@famtglobal.com">
+
+<!-- SCHEMA MARKUP (IMPORTANT FOR GOOGLE) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FAMT Global",
+  "url": "https://famtglobal.com",
+  "logo": "https://famtglobal.com/static/images/logo.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-9966341359",
+    "contactType": "customer service",
+    "areaServed": "IN",
+    "availableLanguage": ["English"]
+  }
+}
+</script>
 
 <title>FAMT Global | Finance Accounting Management & Taxation</title>
 
@@ -98,8 +151,10 @@ background-color: #16a34a;
 <!-- LOGO -->
 <div class="flex items-center space-x-3 group">
 
-<img src="{% static 'image/famt3.png' %}" 
-     class="w-11 transition duration-300 group-hover:scale-110">
+<a href="{% url 'home' %}" class="group">
+  <img src="{% static 'image/famt3.png' %}" 
+       class="w-11 transition duration-300 group-hover:scale-110">
+</a>
 
 <div class="flex flex-col leading-tight">
 
@@ -108,7 +163,7 @@ FAMT Global
 </h1>
 
 <div class="text-xs text-gray-500">
-Finance • Accounting • Taxation
+Finance • Accounting • Management • Taxation
 </div>
 
 </div>
@@ -130,22 +185,27 @@ About
 </a>
 
 
-<!-- SERVICES DROPDOWN -->
-<div class="relative group">
+<div class="relative group inline-block">
 
 <button class="flex items-center gap-1 hover:text-blue-600 transition">
 Services
 <i data-lucide="chevron-down" class="w-4 h-4"></i>
 </button>
 
+<!-- HOVER BRIDGE -->
+<div class="absolute left-0 top-full w-full h-2"></div>
+
 <!-- DROPDOWN -->
-<div class="absolute left-0 top-full mt-3 w-72 bg-white shadow-xl rounded-xl p-3 
+<div class="absolute left-0 top-full w-72 bg-white shadow-xl rounded-xl p-3 
 opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-transition duration-300 z-50 border">
+transition duration-200 z-50 border">
 
 <a href="{% url 'incorporation' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">US Incorporation</a>
 
 <a href="{% url 'bookkeeping' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Bookkeeping</a>
+
+<a href="{% url 'payroll' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Payroll Services</a>
+<a href="{% url 'management' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Management</a>
 
 <a href="{% url 'itin' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">ITIN Services</a>
 
@@ -160,7 +220,6 @@ transition duration-300 z-50 border">
 </div>
 
 </div>
-
 <a href="{% url 'who_we_help' %}" class="hover:text-blue-600 transition">
 Who We Help
 </a>

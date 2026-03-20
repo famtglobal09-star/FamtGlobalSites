@@ -1,15 +1,25 @@
 {% extends 'website/index.html' %}
 {% block content %}
+{% load static %}
 
-<section class="relative py-32 text-white text-center">
-<div class="absolute inset-0 bg-cover bg-center"
-style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85');"></div>
-<div class="absolute inset-0 bg-black/70"></div>
 
-<div class="relative z-10">
-<h1 class="text-5xl font-bold">CPA Letter Services</h1>
-<p>Professional documentation for financial verification and compliance</p>
-</div>
+<style>
+  .cpa-letter-bg {
+    background-image: url("{% static 'image/cpa3.jpg' %}");
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+
+<section class="relative py-32 text-white text-center cpa-letter-bg">
+
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="relative z-10">
+    <h1 class="text-5xl font-bold">CPA Letter Services</h1>
+    <p>Professional documentation for financial verification and compliance</p>
+  </div>
+
 </section>
 
 <section class="py-24 bg-white">
@@ -30,7 +40,7 @@ Our CPA letters provide official verification for income, business operations, a
 </ul>
 </div>
 
-<img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07"
+<img src="{% static 'image/book3.jpg' %}"
 class="rounded-xl shadow-lg">
 
 </div>

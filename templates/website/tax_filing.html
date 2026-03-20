@@ -1,35 +1,49 @@
 {% extends 'website/index.html' %}
+{% load static %}
 {% block content %}
 
-<section class="relative py-32 text-white text-center">
-<div class="absolute inset-0 bg-cover bg-center"
-style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f');"></div>
-<div class="absolute inset-0 bg-black/70"></div>
+<!-- HERO -->
+<style>
+  .us-tax-bg {
+    background-image: url("{% static 'image/itin2.jpg' %}");
+    background-size: cover;
+    background-position: center;
+  }
+</style>
 
-<div class="relative z-10">
-<h1 class="text-5xl font-bold">US Tax Filing</h1>
-<p>Stay compliant and maximize your tax savings</p>
-</div>
+<section class="relative py-32 text-white text-center us-tax-bg">
+
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="relative z-10">
+    <h1 class="text-5xl font-bold">US Tax Filing</h1>
+    <p>Stay compliant and maximize your tax savings</p>
+  </div>
+
 </section>
 
+<!-- EXPERTISE -->
 <section class="py-24 bg-white text-center">
 
-<h2 class="text-4xl font-bold mb-10">Our Expertise</h2>
+  <h2 class="text-4xl font-bold mb-10">Our Expertise</h2>
 
-<div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+  <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
 
-<div class="p-6 shadow rounded-xl">Individual Tax</div>
-<div class="p-6 shadow rounded-xl">Business Tax</div>
-<div class="p-6 shadow rounded-xl">Tax Planning</div>
-<div class="p-6 shadow rounded-xl">Audit Support</div>
+    <div class="p-6 shadow rounded-xl">Individual Tax</div>
+    <div class="p-6 shadow rounded-xl">Business Tax</div>
+    <div class="p-6 shadow rounded-xl">Tax Planning</div>
+    <div class="p-6 shadow rounded-xl">Audit Support</div>
 
-</div>
+  </div>
 
 </section>
 
+<!-- CTA -->
 <section class="py-20 bg-blue-600 text-white text-center">
-<h2 class="text-4xl font-bold">File Taxes Without Stress</h2>
-<a href="{% url 'contact' %}" class="bg-white text-blue-600 px-8 py-3 rounded-lg mt-6 inline-block">Book Now</a>
+  <h2 class="text-4xl font-bold">File Taxes Without Stress</h2>
+  <a href="{% url 'contact' %}" class="bg-white text-blue-600 px-8 py-3 rounded-lg mt-6 inline-block">
+    Book Now
+  </a>
 </section>
 
 {% endblock %}

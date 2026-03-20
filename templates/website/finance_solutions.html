@@ -1,44 +1,58 @@
 {% extends 'website/index.html' %}
+{% load static %}
 {% block content %}
 
-<section class="relative py-32 text-white text-center">
-<div class="absolute inset-0 bg-cover bg-center"
-style="background-image:url('https://images.unsplash.com/photo-1460925895917-afdab827c52f');"></div>
-<div class="absolute inset-0 bg-black/70"></div>
+<!-- HERO -->
+<style>
+  .finance-hero-bg {
+    background-image: url("{% static 'image/Finance.jpg' %}");
+    background-size: cover;
+    background-position: center;
+  }
+</style>
 
-<div class="relative z-10">
-<h1 class="text-5xl font-bold">Finance Solutions</h1>
-<p>End-to-end financial strategies for sustainable business growth</p>
-</div>
+<section class="relative py-32 text-white text-center finance-hero-bg">
+
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="relative z-10">
+    <h1 class="text-5xl font-bold">Finance Solutions</h1>
+    <p>End-to-end financial strategies for sustainable business growth</p>
+  </div>
+
 </section>
 
+<!-- CONTENT -->
 <section class="py-24 bg-white">
 
-<div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71" class="rounded-xl shadow-lg">
+    <img src="{% static 'image/financeA2.jpg' %}" class="rounded-xl shadow-lg">
 
-<div>
-<h2 class="text-4xl font-bold mb-6">Smart Financial Management</h2>
-<p class="text-gray-600 mb-6">
-We provide customized financial solutions tailored to your business model, helping you optimize operations, reduce costs, and maximize profitability.
-</p>
+    <div>
+      <h2 class="text-4xl font-bold mb-6">Smart Financial Management</h2>
+      <p class="text-gray-600 mb-6">
+        We provide customized financial solutions tailored to your business model, helping you optimize operations, reduce costs, and maximize profitability.
+      </p>
 
-<ul class="space-y-3 text-gray-600">
-<li>✔ Financial planning & forecasting</li>
-<li>✔ Budgeting & cost optimization</li>
-<li>✔ Cash flow management</li>
-<li>✔ Growth strategy</li>
-</ul>
-</div>
+      <ul class="space-y-3 text-gray-600">
+        <li>✔ Financial planning & forecasting</li>
+        <li>✔ Budgeting & cost optimization</li>
+        <li>✔ Cash flow management</li>
+        <li>✔ Growth strategy</li>
+      </ul>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
+<!-- CTA -->
 <section class="py-20 bg-blue-600 text-white text-center">
-<h2 class="text-4xl font-bold mb-6">Transform Your Financial Strategy</h2>
-<a href="{% url 'contact' %}" class="bg-white text-blue-600 px-8 py-3 rounded-lg">Talk to Expert</a>
+  <h2 class="text-4xl font-bold mb-6">Transform Your Financial Strategy</h2>
+  <a href="{% url 'contact' %}" class="bg-white text-blue-600 px-8 py-3 rounded-lg">
+    Talk to Expert
+  </a>
 </section>
 
 {% endblock %}

@@ -45,6 +45,9 @@ urlpatterns = [
    path('services/finance-analysis/', views.finance_analysis,name='finance_analysis'),
    path('services/us-incorporation/', views.incorporation, name='incorporation'),
    path('who_we_help/', views.who_we_help, name='who_we_help'),
+   path('payroll/', views.payroll, name='payroll'),
+    path('management/', views.management, name='management'),
+  
     
 
     path('robots.txt', views.robots_txt, name='robots_txt'),

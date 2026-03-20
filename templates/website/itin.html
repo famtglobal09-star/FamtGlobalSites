@@ -1,64 +1,80 @@
 {% extends 'website/index.html' %}
+{% load static %}
 {% block content %}
 
 <!-- HERO -->
-<section class="relative py-32 text-white text-center overflow-hidden">
+<style>
+  .itin-hero-bg {
+    background-image: url("{% static 'images/services/itin_hero.jpg' %}");
+    background-size: cover;
+    background-position: center;
+  }
+</style>
 
-<div class="absolute inset-0 bg-cover bg-center"
-style="background-image:url('https://images.unsplash.com/photo-1588776814546-ec7e9e3f8b4d');"></div>
+<section class="relative py-32 text-white text-center overflow-hidden itin-hero-bg">
 
-<div class="absolute inset-0 bg-gradient-to-r from-black/80 to-blue-900/70"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-blue-900/70"></div>
 
-<div class="relative z-10">
-<h1 class="text-6xl font-bold mb-6">ITIN Services</h1>
-<p class="text-lg text-gray-200">Fast & secure ITIN processing with full IRS compliance</p>
-</div>
+  <div class="relative z-10">
+    <h1 class="text-6xl font-bold mb-6">ITIN Services</h1>
+    <p class="text-lg text-gray-200">Fast & secure ITIN processing with full IRS compliance</p>
+  </div>
 
 </section>
 
 <!-- IMAGE CARDS -->
+<style>
+  .tax-filing-bg {
+    background-image: url("{% static 'image/itin2.jpg' %}");
+    background-size: cover;
+    background-position: center;
+  }
+  .bank-accounts-bg {
+    background-image: url("{% static 'image/itin3.jpg' %}");
+    background-size: cover;
+    background-position: center;
+  }
+  .compliance-bg {
+    background-image: url("{% static 'image/itin4.jpg' %}");
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+
 <section class="py-24 bg-gray-100">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-4">
 
-<div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 px-4">
+    <div class="relative h-80 rounded-xl overflow-hidden group tax-filing-bg">
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="relative z-10 p-6 text-white">
+        <h3 class="text-xl font-bold">Tax Filing</h3>
+        <p>File US taxes legally</p>
+      </div>
+    </div>
 
-<div class="relative h-80 rounded-xl overflow-hidden group">
-<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition"
-style="background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f');"></div>
-<div class="absolute inset-0 bg-black/60"></div>
-<div class="relative z-10 p-6 text-white">
-<h3 class="text-xl font-bold">Tax Filing</h3>
-<p>File US taxes legally</p>
-</div>
-</div>
+    <div class="relative h-80 rounded-xl overflow-hidden group bank-accounts-bg">
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="relative z-10 p-6 text-white">
+        <h3 class="text-xl font-bold">Bank Accounts</h3>
+        <p>Open US bank accounts easily</p>
+      </div>
+    </div>
 
-<div class="relative h-80 rounded-xl overflow-hidden group">
-<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition"
-style="background-image:url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e');"></div>
-<div class="absolute inset-0 bg-black/60"></div>
-<div class="relative z-10 p-6 text-white">
-<h3 class="text-xl font-bold">Bank Accounts</h3>
-<p>Open US bank accounts easily</p>
-</div>
-</div>
+    <div class="relative h-80 rounded-xl overflow-hidden group compliance-bg">
+      <div class="absolute inset-0 bg-black/60"></div>
+      <div class="relative z-10 p-6 text-white">
+        <h3 class="text-xl font-bold">Compliance</h3>
+        <p>Stay IRS compliant</p>
+      </div>
+    </div>
 
-<div class="relative h-80 rounded-xl overflow-hidden group">
-<div class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition"
-style="background-image:url('https://images.unsplash.com/photo-1556745757-8d76bdb6984b');"></div>
-<div class="absolute inset-0 bg-black/60"></div>
-<div class="relative z-10 p-6 text-white">
-<h3 class="text-xl font-bold">Compliance</h3>
-<p>Stay IRS compliant</p>
-</div>
-</div>
-
-</div>
-
+  </div>
 </section>
 
 <!-- CTA -->
 <section class="py-24 bg-blue-600 text-white text-center">
-<h2 class="text-4xl font-bold mb-6">Get Your ITIN Today</h2>
-<a href="#callback" class="bg-white text-blue-600 px-10 py-4 rounded-xl font-bold">Apply Now</a>
+  <h2 class="text-4xl font-bold mb-6">Get Your ITIN Today</h2>
+  <a href="#callback" class="bg-white text-blue-600 px-10 py-4 rounded-xl font-bold">Apply Now</a>
 </section>
 
 {% endblock %}

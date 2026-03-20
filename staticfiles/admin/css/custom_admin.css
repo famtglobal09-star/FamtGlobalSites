@@ -1,0 +1,126 @@
+/* =======================
+   Professional Clean Admin - CallbackRequest
+======================= */
+
+/* Global Font */
+body, .module, .inline-group, .change-form, .change-list {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #1f2937; /* dark text */
+    background: #f9fafb; /* light neutral background */
+}
+
+/* Header */
+#header {
+    background: #111827 !important;
+    color: #f9fafb !important;
+}
+
+/* Branding */
+#branding h1 {
+    color: #f9fafb !important;
+}
+
+/* User Tools */
+#user-tools a {
+    color: #f9fafb !important;
+}
+#user-tools a:hover {
+    color: #3b82f6 !important;
+}
+
+/* Sidebar */
+#nav-sidebar {
+    background: #1f2937 !important;
+    color: #d1d5db;
+}
+#nav-sidebar a {
+    color: #d1d5db;
+}
+#nav-sidebar a:hover {
+    background: #374151;
+    color: #f9fafb;
+}
+
+/* Tables for CallbackRequest List */
+.change-list table {
+    border-collapse: separate;
+    border-spacing: 0 6px;
+    width: 100%;
+}
+
+.change-list th {
+    background: #f3f4f6; /* light header */
+    color: #1f2937;       /* dark text */
+    font-weight: 600;
+    padding: 10px;
+}
+
+.change-list td {
+    background: #ffffff;  /* white background for rows */
+    color: #1f2937;       /* dark text */
+    padding: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.change-list tr:hover td {
+    background: #f3f4f6; /* subtle hover */
+}
+
+/* Pagination */
+.paginator a {
+    background: #6b7280;  /* neutral gray buttons */
+    color: white;
+}
+.paginator a:hover {
+    background: #4b5563;
+}
+
+/* Buttons */
+input[type="submit"], .submit-row input, .deletelink, .button {
+    background: #6b7280 !important; /* neutral gray */
+    color: white !important;
+}
+input[type="submit"]:hover, .submit-row input:hover, .deletelink:hover, .button:hover {
+    background: #4b5563 !important;
+}
+
+/* Input Fields */
+input, select, textarea {
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    padding: 6px 10px;
+    background: #ffffff; /* white background */
+    color: #1f2937;      /* dark text */
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #9ca3af; /* subtle neutral focus */
+    box-shadow: none;
+}
+
+/* Inline Forms */
+.inline-group {
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+/* Messages */
+.success, .messagelist .success {
+    background: #d1fae5 !important;
+    color: #065f46 !important;
+    border-left: 5px solid #10b981;
+}
+.error, .messagelist .error {
+    background: #fee2e2 !important;
+    color: #b91c1c !important;
+    border-left: 5px solid #ef4444;
+}
+
+/* Footer */
+#footer {
+    background: #111827 !important;
+    color: #f9fafb;
+}
