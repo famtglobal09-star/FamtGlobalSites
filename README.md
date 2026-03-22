@@ -1,4 +1,4 @@
-# owcus Consulting Website
+# FAMT Consulting Website
 
 A professional Django-based website for owcus, a leading consulting firm specializing in accounting, tax, and business incorporation services.
 
@@ -103,7 +103,7 @@ By default the project uses Django's console email backend (prints emails to the
 - `EMAIL_USE_TLS` (e.g. `True`)
 - `EMAIL_HOST_USER` (your SMTP username)
 - `EMAIL_HOST_PASSWORD` (your SMTP password)
-- `DEFAULT_FROM_EMAIL` (sender address, e.g. `no-reply@entelyglobal.com`)
+- `DEFAULT_FROM_EMAIL` (sender address, e.g. `no-reply@famtyglobal.com`)
 - `CONTACT_RECIPIENT_EMAIL` (where contact form submissions should be sent)
 
 Example (Windows PowerShell):
@@ -115,7 +115,7 @@ $env:EMAIL_PORT='587'
 $env:EMAIL_USE_TLS='True'
 $env:EMAIL_HOST_USER='your-email@example.com'
 $env:EMAIL_HOST_PASSWORD='your-email-password'
-$env:CONTACT_RECIPIENT_EMAIL='info@entelyglobal.com'
+$env:CONTACT_RECIPIENT_EMAIL='info@famtglobal.com'
 ```
 
 ## WhatsApp Configuration
