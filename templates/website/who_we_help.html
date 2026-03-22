@@ -1,31 +1,54 @@
 {% extends 'website/index.html' %}
 {% load static %}
 
-{% block title %}Who We Help - FAMT Global{% endblock %}
+{% block title %}
+{% block title %}
+Best Finance, Accounting, Management & Taxation Services in USA & Worldwide | FAMT Global
+{% endblock %}
+{% endblock %}
 
 {% block content %}
 
 <!-- HERO -->
 <section class="relative py-32 text-center text-white overflow-hidden">
 
-<div class="absolute inset-0 bg-cover bg-center"
-style="background-image:url('https://images.unsplash.com/photo-1507679799987-c73779587ccf');"></div>
+<div class="absolute inset-0">
+    <img src="{% static 'image/who.jpg' %}" 
+         class="w-full h-full object-cover">
+</div>
 
 <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/70 to-blue-900/70"></div>
 
 <div class="relative z-10 max-w-4xl mx-auto px-4">
 
-<h1 class="text-6xl font-extrabold mb-6 leading-tight">
-Who We Help
+<h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+Best Finance, Accounting, Management & Taxation Services in USA for Companies
 </h1>
 
 <p class="text-lg text-gray-200 leading-relaxed">
-We empower decision-makers with financial clarity, strategic insights, and scalable systems.  
-From founders to investors — we become your extended finance partner.
+FAMT Global provides the best finance, accounting, management, and taxation services in the USA for companies. 
+We help CEOs, CFOs, and investors streamline financial operations, ensure compliance, and scale globally with confidence.
 </p>
 
 </div>
 
+</section>
+
+
+<!-- SEO EXTRA CONTENT -->
+<section class="py-16 bg-white text-center">
+<div class="max-w-5xl mx-auto px-4">
+
+<h2 class="text-3xl font-bold mb-6">
+Top Finance & Accounting Firm in USA for Growing Companies
+</h2>
+
+<p class="text-gray-600 leading-relaxed">
+We specialize in delivering end-to-end financial solutions including bookkeeping, taxation, compliance, and strategic advisory services across the USA. 
+Our goal is to help businesses reduce costs, improve cash flow, and achieve long-term growth.
+</p>
+
+</div>
 </section>
 
 
@@ -170,24 +193,22 @@ How We Deliver Value
 <section class="relative py-28 text-center text-white">
 
 <div class="absolute inset-0 bg-blue-600"></div>
-
 <div class="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-500 opacity-90"></div>
 
 <div class="relative z-10">
 
-<h2 class="text-5xl font-bold mb-6">
-Ready to Scale Your Business?
+<h2 class="text-4xl md:text-5xl font-bold mb-6">
+Best Finance & Accounting Services in USA for Companies
 </h2>
 
 <p class="mb-10 text-blue-100 max-w-2xl mx-auto">
-Let’s simplify your finances and unlock your business potential with expert-driven strategies.
+Looking for the best finance, accounting, management, and taxation services in the USA? 
+FAMT Global is your trusted partner for growth, compliance, and financial success.
 </p>
 
 <a href="{% url 'contact' %}"
 class="bg-white text-blue-600 px-10 py-4 rounded-xl font-bold hover:bg-gray-100 transition shadow-lg">
-
 Book Free Consultation
-
 </a>
 
 </div>

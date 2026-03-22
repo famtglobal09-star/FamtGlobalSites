@@ -20,12 +20,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+# SECURITY WARNING: keep the secret key used in production secre
+import os
 
-DEBUG = False
+# Use the environment variable if it exists, otherwise use a default for dev
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'x+cz1*=cil@5!h2li=a39y9_8^d6l^np+f^nok-2=b^ia-ec(9'  # fallback key for development
+)
 
-ALLOWED_HOSTS = ['famtglobal.com', 'www.famtglobal.com']
+DEBUG =False
+ALLOWED_HOSTS = [
+    'famtglobal.com',
+    'www.famtglobal.com',
+    '31.97.229.130',
+]
+
+# =======================
+# CSRF & Session Security
+# =======================
+CSRF_TRUSTED_ORIGINS = [
+    'https://famtglobal.com',
+    'https://www.famtglobal.com',
+]
 
 
 # Application definition
@@ -129,21 +146,30 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Email configuration (development by default)
-# To send real emails in production, configure these environment variables.
-EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend')
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'admin@famtglobal.com')
-CONTACT_RECIPIENT_EMAIL = os.environ.get('CONTACT_RECIPIENT_EMAIL', 'admin@famtglobal.com')
-# WhatsApp configuration
-WHATSAPP_NUMBER = os.environ.get('WHATSAPP_NUMBER', '15551234567')  # Default test number
-# Optional SMTP configuration (set these in your environment for real email delivery)
-# EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
-# EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
-# EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
-# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
-# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+import os
+
+# EMAIL SETTINGS (Gmail with App Password)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+# For local development (not secure)
+EMAIL_HOST_USER = 'famtglobal09@gmail.com'        # Your Gmail address
+EMAIL_HOST_PASSWORD = 'jmuwfjoxfppyrqrg'          # Your Gmail App Password
+
+# For production, use environment variables:
+# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
+# Default 'From' address
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

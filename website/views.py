@@ -14,18 +14,11 @@ from django.shortcuts import render, redirect
 from consulting_site.forms import CallbackForm
 
 
+from django.contrib import messages
+from django.shortcuts import render, redirect
+
 def home(request):
-    form = CallbackForm()
-
-    if request.method == "POST":
-        form = CallbackForm(request.POST)
-
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Thank you! We will reach you shortly.")
-            return redirect('home')  # use URL name if possible
-
-    return render(request, 'website/base.html', {'form': form})
+    return render(request, 'website/base.html')
 
 def incorporation(request):
     return render(request,'website/incorporation.html')
@@ -51,8 +44,43 @@ def about(request):
     return render(request,'website/about.html')
 def testimonials(request):
     return render(request,'website/testimonials.html')
+from django.conf import settings
+from django.contrib import messages
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+
+
+
 def contact(request):
-    return render(request,'website/contact.html')
+    if request.method == "POST":
+        form = CallbackForm(request.POST)
+
+        if form.is_valid():
+            callback = form.save()
+
+            # Send email notification to admin
+            subject = f"New Callback Request from {callback.name}"
+            message = f"""
+You have received a new callback request:
+
+Name: {callback.name}
+Email: {callback.email}
+Phone: {callback.phone}
+Service: {callback.service}
+Message: {callback.message}
+"""
+            admin_email = settings.DEFAULT_FROM_EMAIL  # or your team email
+            recipient_list = ['subbutext999@gmail.com','admin@refundsuper.com']  # replace with your email
+
+            send_mail(subject, message, admin_email, recipient_list, fail_silently=False)
+
+            messages.success(request, "We got your request! A consultant will contact you soon.")
+            return redirect('contact')
+
+    else:
+        form = CallbackForm()
+
+    return render(request, 'website/contact.html', {'form': form})
 def privacy_policy(request):
     return render(request,'website/privacy_policy.html')
 def terms(request):

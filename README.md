@@ -1,4 +1,4 @@
-# owcus Consulting Website
+# FAMT Consulting Website
 
 A professional Django-based website for owcus, a leading consulting firm specializing in accounting, tax, and business incorporation services.
 
@@ -115,7 +115,7 @@ $env:EMAIL_PORT='587'
 $env:EMAIL_USE_TLS='True'
 $env:EMAIL_HOST_USER='your-email@example.com'
 $env:EMAIL_HOST_PASSWORD='your-email-password'
-$env:CONTACT_RECIPIENT_EMAIL='info@entelyglobal.com'
+$env:CONTACT_RECIPIENT_EMAIL='info@famtglobal.com'
 ```
 
 ## WhatsApp Configuration
@@ -157,5 +157,5 @@ This project is proprietary software owned by Entely Global.
 ## Contact
 
 For technical support or inquiries:
-- Email: info@entelyglobal.com
-- Website: https://entelyglobal.com
+- Email: info@famtglobal.com
+- Website: https://famtglobal.com.com
