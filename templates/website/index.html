@@ -234,6 +234,9 @@ transition duration-200 z-50 border">
 <a href="{% url 'finance_analysis' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Finance Analysis</a>
 
 </div>
+<button id="menuBtn" class="md:hidden text-gray-800">
+  <i data-lucide="menu"></i>
+</button>
 
 </div>
 <a href="{% url 'who_we_help' %}" class="hover:text-blue-600 transition">
@@ -259,6 +262,22 @@ Get Consultation
 </div>
 
 </header>
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="fixed top-0 left-0 w-64 h-full bg-white shadow transform -translate-x-full transition duration-300 z-50">
+
+  <div class="p-4 flex justify-between border-b">
+    <b>Menu</b>
+    <button id="closeMenu">✕</button>
+  </div>
+
+  <a href="{% url 'home' %}" class="block p-4 border-b">Home</a>
+  <a href="{% url 'about' %}" class="block p-4 border-b">About</a>
+  <a href="{% url 'contact' %}" class="block p-4 border-b">Contact</a>
+
+</div>
+
+<!-- OVERLAY -->
+<div id="overlay" class="fixed inset-0 bg-black/50 hidden z-40"></div>
 <!-- CONTENT -->
 {% block content %}
 {% endblock %}

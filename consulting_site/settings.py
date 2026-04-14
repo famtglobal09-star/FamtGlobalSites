@@ -34,6 +34,8 @@ ALLOWED_HOSTS = [
     'famtglobal.com',
     'www.famtglobal.com',
     '31.97.229.130',
+    '127.0.0.1',
+    'localhost',
 ]
 
 # =======================

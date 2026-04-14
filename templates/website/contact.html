@@ -1,9 +1,13 @@
 {% extends 'website/index.html' %}
 {% load static %}
 
-{% block title %}Contact Us - FAMT Global{% endblock %}
+{% block title %}Contact FAMT Global | Finance & Tax Consulting{% endblock %}
 
 {% block content %}
+
+<!-- SEO Meta (if not in base template) -->
+<meta name="description" content="Contact FAMT Global for expert finance consulting, taxation, and accounting services. Book your free consultation today.">
+<meta name="robots" content="index, follow">
 
 <!-- SUCCESS MESSAGE POPUP -->
 {% if messages %}
@@ -15,6 +19,25 @@
       {% endfor %}
   </div>
 {% endif %}
+
+<!-- Breadcrumb (SEO Boost) -->
+<nav class="max-w-7xl mx-auto px-4 py-3 text-sm text-gray-600">
+  <ol class="flex items-center space-x-2">
+
+    <li>
+      <a href="/" class="hover:text-blue-600 font-medium">Home</a>
+    </li>
+
+    <li>
+      <span class="text-gray-400">/</span>
+    </li>
+
+    <li class="text-gray-900 font-semibold">
+      Contact
+    </li>
+
+  </ol>
+</nav>
 
 <section id="callback" class="py-24 bg-white relative overflow-hidden">
 
@@ -30,9 +53,10 @@
           Strategic Consultation
         </h2>
 
-        <h3 class="text-5xl font-black text-slate-900 mb-8">
+        <!-- ✅ FIXED H1 -->
+        <h1 class="text-5xl font-black text-slate-900 mb-8">
           Ready to scale your financial infrastructure?
-        </h3>
+        </h1>
 
         <p class="text-xl text-slate-500 mb-10">
           Schedule a 15-minute discovery call with our consultants to analyze your financial system and growth roadmap.
@@ -53,6 +77,14 @@
             <span class="font-bold text-slate-700">24/7 Global Support</span>
           </div>
         </div>
+
+        <!-- Internal Links (SEO Boost) -->
+        <div class="mt-10 text-sm">
+          <a href="/about" class="text-blue-600 underline">About Us</a> |
+          <a href="/services" class="text-blue-600 underline">Our Services</a> |
+          <a href="/" class="text-blue-600 underline">Home</a>
+        </div>
+
       </div>
 
       <!-- FORM -->
@@ -124,13 +156,24 @@
 
       </form>
 
-    </div> <!-- GRID -->
+    </div>
 
-  </div> <!-- CONTAINER -->
+  </div>
 
 </section>
 
-<!-- JS: Auto-hide success message -->
+<!-- Schema Markup (SEO BOOST 🚀) -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "ContactPage",
+ "name": "Contact FAMT Global",
+ "url": "https://famtglobal.com/contact",
+ "description": "Contact FAMT Global for finance consulting and taxation services."
+}
+</script>
+
+<!-- JS -->
 <script>
   setTimeout(function() {
     const msg = document.getElementById('success-message');
@@ -140,7 +183,7 @@
   }, 3000);
 </script>
 
-<!-- CSS: Fade-in animation -->
+<!-- CSS -->
 <style>
   @keyframes fade-in {
     from { opacity: 0; transform: translateY(-10px); }
