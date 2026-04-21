@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,77 +5,208 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
-<title>FAMT Global | Finance, Accounting, Management & Taxation</title>
+<title>FAMTGlobal | Finance Accounting Management & Taxation</title>
+
+
+<meta name="description" content="FAMT Global provides expert finance, accounting, taxation, and business consulting services. Grow your business with professional financial solutions.">
+
+<meta name="keywords" content="finance consulting, accounting services, taxation services, bookkeeping, US tax filing, CPA services, business consulting">
+
+<meta name="author" content="FAMT Global">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HBWPP21RVD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HBWPP21RVD');
+</script>
+
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (for WhatsApp / Facebook sharing) -->
+<meta property="og:title" content="FAMT Global">
+<meta property="og:description" content="Expert Finance, Accounting & Taxation Services">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{% static 'images/famt3.png' %}">
+<meta property="og:url" content="https://yourdomain.com">
+
+<!-- Mobile SEO -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <style>
-.hero-slide { opacity:0; transition:opacity 1s ease; }
-.active-slide { opacity:1; }
 
-.whatsapp-btn {
-animation: float 3s ease-in-out infinite, pulse 2s infinite;
-transition: all 0.3s ease;
+.hero-slide {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
+.active-slide {
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Zoom effect */
+.slide-img {
+    transition: transform 6s ease;
+}
+
+.active-slide .slide-img {
+    transform: scale(1);
+}
+
+/* Text animation */
+.slide-content {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.active-slide .slide-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FLOAT ANIMATION */
 @keyframes float {
 0% { transform: translateY(0px); }
 50% { transform: translateY(-6px); }
 100% { transform: translateY(0px); }
 }
 
+/* PULSE GLOW */
 @keyframes pulse {
 0% { box-shadow: 0 0 0 0 rgba(34,197,94, 0.7); }
 70% { box-shadow: 0 0 0 12px rgba(34,197,94, 0); }
 100% { box-shadow: 0 0 0 0 rgba(34,197,94, 0); }
 }
+
+/* BUTTON STYLE */
+.whatsapp-btn {
+animation: float 3s ease-in-out infinite, pulse 2s infinite;
+transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.whatsapp-btn:hover {
+transform: scale(1.1);
+background-color: #16a34a;
+}
+
+.hero-slide{
+opacity:0;
+transition:opacity 1s ease;
+}
+
+.active-slide{
+opacity:1;
+}
+
+.tagline{
+font-size:12px;
+color:black;
+}
+
+.form-input{
+width:100%;
+padding:14px;
+border:1px solid #e2e8f0;
+border-radius:10px;
+outline:none;
+}
+
+.form-input:focus{
+border-color:#2563eb;
+box-shadow:0 0 0 2px rgba(37,99,235,0.2);
+}
+
 </style>
 
 </head>
 
-<body>
-
 <!-- TOP BAR -->
 <div class="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white text-sm">
   <div class="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
+
     <div class="flex items-center gap-4">
-      <span>📞 +91 9966341359</span>
-      <span class="hidden md:block">info@famtglobal.com</span>
+      <span class="flex items-center gap-1">
+        <i data-lucide="phone"></i> +91 9966341359
+      </span>
+      <span class="hidden md:flex items-center gap-1">
+        <i data-lucide="mail"></i> info@famtglobal.com
+      </span>
     </div>
-    <div class="hidden md:block text-xs">Trusted Financial Consulting Partner 🌍</div>
+
+    <div class="hidden md:block text-xs text-gray-200">
+      Trusted Financial Consulting Partner 🌍
+    </div>
+
   </div>
 </div>
 
+
 <!-- NAVBAR -->
-<header class="sticky top-0 z-50 backdrop-blur-lg bg-white/80 border-b shadow">
+<header class="sticky top-0 z-50 backdrop-blur-lg bg-white/80 border-b border-gray-200 shadow-sm">
 
 <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
 
 <!-- LOGO -->
-<div class="flex items-center space-x-3">
-  <img src="{% static 'image/famt3.png' %}" class="w-11">
-  <div>
-    <div class="text-xl font-bold">FAMT Global</div>
-    <div class="text-xs text-gray-500">Finance • Accounting • Management • Taxation</div>
-  </div>
+<div class="flex items-center space-x-3 group">
+
+<a href="{% url 'home' %}" class="group">
+  <img src="{% static 'image/famt3.png' %}" 
+       class="w-11 transition duration-300 group-hover:scale-110">
+</a>
+
+<div class="flex flex-col leading-tight">
+
+<h1 class="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition">
+FAMT Global
+</h1>
+
+<div class="text-xs text-gray-500">
+Finance • Accounting • Management • Taxation
 </div>
 
-<!-- DESKTOP MENU -->
+</div>
+
+</div>
+
+
+<!-- MENU -->
 <nav class="hidden md:flex items-center space-x-8 font-medium">
 
-<a href="{% url 'home' %}" class="hover:text-blue-600">Home</a>
-<a href="{% url 'about' %}" class="hover:text-blue-600">About</a>
+<a href="{% url 'home' %}" 
+   class="relative hover:text-blue-600 transition">
+   Home
+   <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 transition-all group-hover:w-full"></span>
+</a>
 
-<!-- SERVICES -->
-<div class="relative group">
-<button class="flex items-center gap-1 hover:text-blue-600">
-Services <i data-lucide="chevron-down" class="w-4 h-4"></i>
+<a href="{% url 'about' %}" class="hover:text-blue-600 transition">
+About
+</a>
+
+
+<div class="relative group inline-block">
+
+<button class="flex items-center gap-1 hover:text-blue-600 transition">
+Services
+<i data-lucide="chevron-down" class="w-4 h-4"></i>
 </button>
 
-<div class="absolute left-0 top-full w-64 bg-white shadow rounded-lg p-3 
-opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+<!-- HOVER BRIDGE -->
+<div class="absolute left-0 top-full w-full h-2"></div>
+
+<!-- DROPDOWN -->
+<div class="absolute left-0 top-full w-72 bg-white shadow-xl rounded-xl p-3 
+opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+transition duration-200 z-50 border">
 
 <a href="{% url 'incorporation' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">US Incorporation</a>
 
@@ -95,215 +225,570 @@ opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
 
 <a href="{% url 'finance_analysis' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Finance Analysis</a>
 
-
-</div>
 </div>
 
-<a href="{% url 'who_we_help' %}" class="hover:text-blue-600">Who We Help</a>
-<a href="{% url 'contact' %}" class="hover:text-blue-600">Contact</a>
+</div>
+<a href="{% url 'who_we_help' %}" class="hover:text-blue-600 transition">
+Who We Help
+</a>
+
+<a href="{% url 'contact' %}" class="hover:text-blue-600 transition">
+Contact
+</a>
 
 </nav>
 
-<!-- RIGHT -->
-<div class="flex items-center gap-4">
 
+<!-- CTA BUTTON -->
 <div class="hidden md:block">
-<a href="{% url 'contact' %}" class="bg-blue-600 text-white px-4 py-2 rounded-full">
+<a href="{% url 'contact' %}" 
+   class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2 rounded-full font-semibold shadow hover:scale-105 transition">
+
 Get Consultation
 </a>
 </div>
 
-<button id="menuBtn" class="md:hidden">
-  <i data-lucide="menu"></i>
-</button>
-
 </div>
 
-</div>
 </header>
 
-<!-- MOBILE MENU -->
-<div id="mobileMenu"
-class="fixed top-0 left-0 w-64 h-full bg-white shadow transform -translate-x-full transition duration-300 z-50 overflow-y-auto">
+{% block content%}
+{% endblock %}
 
-  <div class="p-4 flex justify-between border-b">
-    <b>Menu</b>
-    <button id="closeMenu">✕</button>
-  </div>
 
-  <a href="{% url 'home' %}" class="block p-4 border-b">Home</a>
-  <a href="{% url 'about' %}" class="block p-4 border-b">About</a>
 
-  <!-- SERVICES DROPDOWN -->
-  <button id="servicesToggle" class="w-full text-left p-4 border-b flex justify-between items-center">
-    Services
-    <span id="arrow">▼</span>
-  </button>
 
-  <div id="servicesMenu" class="hidden bg-gray-50">
+<!-- HERO SECTION -->
+{% load static %}
 
-    <a href="{% url 'incorporation' %}" class="block px-6 py-3 border-b">US Incorporation</a>
-    <a href="{% url 'bookkeeping' %}" class="block px-6 py-3 border-b">Bookkeeping</a>
-    <a href="{% url 'payroll' %}" class="block px-6 py-3 border-b">Payroll Services</a>
-    <a href="{% url 'management' %}" class="block px-6 py-3 border-b">Management</a>
-    <a href="{% url 'itin' %}" class="block px-6 py-3 border-b">ITIN Services</a>
-    <a href="{% url 'cpa_letter' %}" class="block px-6 py-3 border-b">CPA Letter</a>
-    <a href="{% url 'tax_filing' %}" class="block px-6 py-3 border-b">US Tax Filing</a>
-    <a href="{% url 'finance_solutions' %}" class="block px-6 py-3 border-b">Finance Solutions</a>
-    <a href="{% url 'finance_analysis' %}" class="block px-6 py-3 border-b">Finance Analysis</a>
+<section id="home" class="relative h-screen overflow-hidden">
 
-  </div>
+    <!-- SLIDE 1 -->
+    <div class="hero-slide active-slide absolute inset-0">
+        <img src="{% static 'image/unsplash.jpg' %}"
+             class="absolute inset-0 w-full h-full object-cover scale-110 slide-img">
 
-  <a href="{% url 'who_we_help' %}" class="block p-4 border-b">Who We Help</a>
-  <a href="{% url 'contact' %}" class="block p-4 border-b">Contact</a>
+        <div class="absolute inset-0 bg-black/60"></div>
 
-</div>
-<!-- OVERLAY -->
-<div id="overlay" class="fixed inset-0 bg-black/50 hidden z-40"></div>
+        <div class="relative h-full flex items-center justify-center text-center text-white">
+            <div class="slide-content">
+                <h1 class="text-5xl font-bold mb-6">FAMT Global</h1>
+                <p class="text-xl mb-4">Finance • Accounting • Management • Taxation</p>
+            </div>
+        </div>
+    </div>
 
-<!-- HERO -->
-<section class="relative h-screen overflow-hidden">
+    <!-- SLIDE 2 -->
+    <div class="hero-slide absolute inset-0">
+        <img src="{% static 'image/unsplash6.jpg' %}"
+             class="absolute inset-0 w-full h-full object-cover scale-110 slide-img">
 
-<div class="hero-slide active-slide absolute inset-0">
-<img src="{% static 'image/unsplash.jpg' %}" class="w-full h-full object-cover">
-<div class="absolute inset-0 bg-black/60"></div>
+        <div class="absolute inset-0 bg-black/60"></div>
 
-<div class="relative h-full flex items-center justify-center text-white text-center">
-<h1 class="text-5xl font-bold">FAMT Global</h1>
-</div>
+        <div class="relative h-full flex items-center justify-center text-center text-white">
+            <div class="slide-content">
+                <h1 class="text-5xl font-bold mb-6">Tax & Compliance</h1>
+                <p class="text-xl">Accurate • Reliable • Fast</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="hero-slide absolute inset-0">
+        <img src="{% static 'image/unsplash.jpg' %}"
+             class="absolute inset-0 w-full h-full object-cover scale-110 slide-img">
+
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <div class="relative h-full flex items-center justify-center text-center text-white">
+            <div class="slide-content">
+                <h1 class="text-5xl font-bold mb-6">Business Growth</h1>
+                <p class="text-xl">Scale • Optimize • Succeed</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOTS -->
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-50">
+        <span class="dot w-3 h-3 bg-white rounded-full cursor-pointer"></span>
+        <span class="dot w-3 h-3 bg-white/50 rounded-full cursor-pointer"></span>
+        <span class="dot w-3 h-3 bg-white/50 rounded-full cursor-pointer"></span>
+    </div>
+
+    <!-- ARROWS -->
+    <button id="prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full z-50">❮</button>
+    <button id="next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-3 rounded-full z-50">❯</button>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="py-20 bg-white">
+
+<div class="max-w-6xl mx-auto px-4 text-center">
+
+<h2 class="text-4xl font-bold mb-6">
+About FAMT Global
+</h2>
+
+<p class="text-gray-600 max-w-3xl mx-auto">
+
+FAMT Global is a professional consulting firm providing services in Finance, Accounting, Management, and Taxation. Our mission is to help businesses achieve financial clarity, regulatory compliance, and sustainable growth.
+
+</p>
+
 </div>
 
 </section>
 
-<footer class="bg-black text-white py-14 border-t border-gray-800 relative overflow-hidden">
+<section class="py-24 bg-white">
 
-<!-- ANIMATED GLOW -->
-<div class="footer-glow top-0 left-0"></div>
-<div class="footer-glow bottom-0 right-0"></div>
+<div class="max-w-7xl mx-auto px-4 text-center">
 
-<div class="relative max-w-7xl mx-auto px-4 grid md:grid-cols-5 gap-10 text-sm">
+<h2 class="text-4xl font-bold mb-6" data-aos="fade-up">
+Financial Services for Businesses
+</h2>
+
+<p class="text-gray-600 max-w-3xl mx-auto mb-16" data-aos="fade-up">
+Empowering businesses with smart financial solutions, innovation, and expert advisory services.
+</p>
+
+
+<div class="grid md:grid-cols-3 gap-10">
+
+<!-- CARD 1 -->
+
+<div data-aos="zoom-in" data-aos-delay="100"
+class="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+
+<!-- BACKGROUND IMAGE -->
+<div class="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-110"
+style="background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978');">
+</div>
+
+<!-- DARK OVERLAY -->
+<div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition"></div>
+
+<!-- CONTENT -->
+<div class="relative z-10 p-6 text-white flex flex-col justify-end h-full">
+
+<h3 class="text-xl font-bold mb-2">
+Business Ideas & Innovation
+</h3>
+
+<p class="text-sm">
+Transform ideas into scalable business models with financial strategy and innovation.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- CARD 2 -->
+
+<div data-aos="zoom-in" data-aos-delay="200"
+class="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+
+<div class="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-110"
+style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40');">
+</div>
+
+<div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition"></div>
+
+<div class="relative z-10 p-6 text-white flex flex-col justify-end h-full">
+
+<h3 class="text-xl font-bold mb-2">
+Finance Solutions
+</h3>
+
+<p class="text-sm mb-2">
+End-to-end financial planning, analysis, and execution.
+</p>
+
+<a href="{% url 'finance_solutions' %}" class="text-blue-300 hover:underline">
+Read More →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- CARD 3 -->
+
+<div data-aos="zoom-in" data-aos-delay="300"
+class="relative h-80 rounded-xl overflow-hidden shadow-lg group">
+
+<div class="absolute inset-0 bg-cover bg-center transition duration-700 group-hover:scale-110"
+style="background-image:url('https://images.unsplash.com/photo-1521791136064-7986c2920216');">
+</div>
+
+<div class="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition"></div>
+
+<div class="relative z-10 p-6 text-white flex flex-col justify-end h-full">
+
+<h3 class="text-xl font-bold mb-2">
+CPA & Accounting Firms
+</h3>
+
+<p class="text-sm mb-2">
+Helping firms scale operations and improve efficiency globally.
+</p>
+
+<a href="{% url 'finance_solutions' %}" class="text-blue-300 hover:underline">
+Read More →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SERVICES -->
+
+<section id="services" class="py-24 bg-gray-100">
+
+<div class="max-w-6xl mx-auto px-4">
+
+<h2 class="text-4xl font-bold text-center mb-4">
+Our Services
+</h2>
+
+<p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+FAMT Global provides professional finance, accounting, and taxation solutions designed to help businesses grow, stay compliant, and achieve financial clarity.
+</p>
+
+
+<div class="grid md:grid-cols-4 gap-8">
+
+<!-- SERVICE 1 -->
+
+<div class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-2 transition duration-300 text-center">
+
+<div class="w-14 h-14 mx-auto mb-4 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+<i data-lucide="dollar-sign"></i>
+</div>
+
+<h3 class="font-bold text-lg mb-3">
+Finance Consulting
+</h3>
+
+<p class="text-gray-600 text-sm">
+Strategic financial planning, budgeting, and business advisory to improve profitability and long-term financial stability.
+</p>
+
+</div>
+
+
+<!-- SERVICE 2 -->
+
+<div class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-2 transition duration-300 text-center">
+
+<div class="w-14 h-14 mx-auto mb-4 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
+<i data-lucide="calculator"></i>
+</div>
+
+<h3 class="font-bold text-lg mb-3">
+Accounting Services
+</h3>
+
+<p class="text-gray-600 text-sm">
+Professional bookkeeping, financial reporting, and accounting solutions to keep your business organized and compliant.
+</p>
+
+</div>
+
+
+<!-- SERVICE 3 -->
+
+<div class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-2 transition duration-300 text-center">
+
+<div class="w-14 h-14 mx-auto mb-4 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center">
+<i data-lucide="briefcase"></i>
+</div>
+
+<h3 class="font-bold text-lg mb-3">
+Management Advisory
+</h3>
+
+<p class="text-gray-600 text-sm">
+Expert consulting to improve operations, optimize business processes, and drive strategic growth decisions.
+</p>
+
+</div>
+
+
+<!-- SERVICE 4 -->
+
+<div class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:-translate-y-2 transition duration-300 text-center">
+
+<div class="w-14 h-14 mx-auto mb-4 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
+<i data-lucide="file-text"></i>
+</div>
+
+<h3 class="font-bold text-lg mb-3">
+Taxation Services
+</h3>
+
+<p class="text-gray-600 text-sm">
+Comprehensive tax planning, filing, and compliance support to help individuals and businesses minimize tax liabilities.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HOW WE DELIVER -->
+
+<section class="py-20 bg-white text-center">
+
+<h2 class="text-4xl font-bold mb-16">
+How We Deliver Financial Services
+</h2>
+
+<div class="grid md:grid-cols-4 gap-10 max-w-6xl mx-auto">
+
+<div>
+
+<h3 class="text-3xl font-bold text-blue-600 mb-4">01</h3>
+
+<p class="font-bold">Audit & Insight</p>
+
+<p class="text-gray-500 text-sm">
+Assess your financial structure.
+</p>
+
+</div>
+
+
+<div>
+
+<h3 class="text-3xl font-bold text-blue-600 mb-4">02</h3>
+
+<p class="font-bold">Strategy Mapping</p>
+
+<p class="text-gray-500 text-sm">
+Build a financial growth roadmap.
+</p>
+
+</div>
+
+
+<div>
+
+<h3 class="text-3xl font-bold text-blue-600 mb-4">03</h3>
+
+<p class="font-bold">Implementation</p>
+
+<p class="text-gray-500 text-sm">
+Integrate financial systems.
+</p>
+
+</div>
+
+
+<div>
+
+<h3 class="text-3xl font-bold text-blue-600 mb-4">04</h3>
+
+<p class="font-bold">Growth Support</p>
+
+<p class="text-gray-500 text-sm">
+Continuous advisory support.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- BENEFITS -->
+
+<section class="py-20 bg-slate-900 text-white text-center">
+
+<h2 class="text-4xl font-bold mb-16">
+Benefits of Our Global Suite
+</h2>
+
+<div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+
+<div>
+
+<i data-lucide="zap" class="mx-auto mb-4"></i>
+
+<h3 class="font-bold text-xl">
+Real-Time Intelligence
+</h3>
+
+<p class="text-gray-400">
+Access financial analytics instantly.
+</p>
+
+</div>
+
+
+<div>
+
+<i data-lucide="lock" class="mx-auto mb-4"></i>
+
+<h3 class="font-bold text-xl">
+Secure Systems
+</h3>
+
+<p class="text-gray-400">
+High security financial infrastructure.
+</p>
+
+</div>
+
+
+<div>
+
+<i data-lucide="users" class="mx-auto mb-4"></i>
+
+<h3 class="font-bold text-xl">
+Expert Advisors
+</h3>
+
+<p class="text-gray-400">
+Access certified professionals.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<footer class="bg-black text-white py-10">
+
+<div class="max-w-7xl mx-auto px-4 grid md:grid-cols-5 gap-8 text-sm">
 
 <!-- COMPANY -->
 <div>
-<h3 class="text-xl font-bold mb-4 text-white">FAMT Global</h3>
+<h3 class="text-lg font-semibold mb-3">FAMT Global</h3>
 <p class="text-gray-400 leading-relaxed">
-Premium finance, accounting, management, and taxation services for companies in the USA & worldwide.
+Best finance, accounting, management, and taxation consulting services in the USA & worldwide.
 </p>
 </div>
 
 <!-- QUICK LINKS -->
 <div>
-<h3 class="font-semibold mb-4 text-white">Quick Links</h3>
+<h3 class="font-semibold mb-3">Quick Links</h3>
 <ul class="space-y-2 text-gray-400">
-<li><a href="{% url 'home' %}" class="hover:text-blue-400 transition">Home</a></li>
-<li><a href="{% url 'about' %}" class="hover:text-blue-400 transition">About</a></li>
-<li><a href="#" class="hover:text-blue-400 transition">Services</a></li>
-<li><a href="{% url 'contact' %}" class="hover:text-blue-400 transition">Contact</a></li>
+<li><a href="{% url 'home' %}" class="hover:text-white">Home</a></li>
+<li><a href="{% url 'about' %}" class="hover:text-white">About</a></li>
+<li><a href="#" class="hover:text-white">Services</a></li>
+<li><a href="{% url 'contact' %}" class="hover:text-white">Contact</a></li>
 </ul>
 </div>
 
 <!-- SERVICES -->
 <div>
-<h3 class="font-semibold mb-4 text-white">Our Services</h3>
+<h3 class="font-semibold mb-3">Our Services</h3>
 <ul class="space-y-2 text-gray-400">
-<li class="hover:translate-x-2 hover:text-blue-400 transition">Finance Consulting</li>
-<li class="hover:translate-x-2 hover:text-blue-400 transition">Accounting Services</li>
-<li class="hover:translate-x-2 hover:text-blue-400 transition">Business Management</li>
-<li class="hover:translate-x-2 hover:text-blue-400 transition">Taxation & Compliance</li>
-<li class="hover:translate-x-2 hover:text-blue-400 transition">Payroll Services</li>
+<li>Finance Consulting</li>
+<li>Accounting Services</li>
+<li>Business Management</li>
+<li>Taxation & Compliance</li>
+<li>Payroll Services</li>
 </ul>
 </div>
 
 <!-- SERVICE AREAS -->
 <div>
-<h3 class="font-semibold mb-4 text-white">Service Areas</h3>
+<h3 class="font-semibold mb-3">Service Areas</h3>
 <ul class="space-y-2 text-gray-400">
-<li class="hover:translate-x-2 hover:text-blue-400 transition">USA</li>
-<li class="hover:translate-x-2 hover:text-blue-400 transition">Canada</li>
-<li class="hover:translate-x-2 hover:text-blue-400 transition">Australia</li>
-<li class="hover:translate-x-2 hover:text-blue-400 transition">Europe</li>
-<li class="hover:translate-x-2 hover:text-blue-400 transition">UK</li>
-<li class="hover:translate-x-2 hover:text-blue-400 transition">Middle East</li>
+<li>United States (USA)</li>
+<li>Canada</li>
+<li>Australia</li>
+<li>Europe</li>
+<li>United Kingdom (UK)</li>
+<li>Middle East</li>
 </ul>
 </div>
 
 <!-- LOCATION -->
 <div>
-<h3 class="font-semibold mb-4 text-white">Corporate Office (USA)</h3>
+<h3 class="font-semibold mb-3">Corporate Office (USA)</h3>
 <p class="text-gray-400 leading-relaxed">
-Famt Global LLC<br>
+REFUND SUPER LLC<br>
 4041 Firefly Way<br>
 Ellicott City, MD 21042<br>
 USA
 </p>
 
-<p class="mt-3 text-gray-400 hover:text-blue-400 transition">📞 +91 99663 41359</p>
-<p class="text-gray-400 hover:text-blue-400 transition">✉️ info@famtglobal.com</p>
+<p class="mt-3 text-gray-400">📞 +91 99663 41359</p>
+<p class="text-gray-400">✉️ info@famtglobal.com</p>
 </div>
 
 </div>
 
-<!-- DIVIDER -->
-<div class="mt-12 border-t border-gray-800"></div>
-
-<!-- COPYRIGHT -->
-<div class="text-center mt-6 text-gray-500 text-sm">
+<div class="text-center mt-8 text-gray-500 text-sm">
 © 2026 FAMT Global. All Rights Reserved.
 </div>
 
 </footer>
 
 
-
 <!-- WHATSAPP -->
 <a href="https://wa.me/919966341359"
-class="whatsapp-btn fixed bottom-5 right-5 bg-green-500 text-white px-4 py-2 rounded-full">
+target="_blank"
+rel="noopener noreferrer"
+class="whatsapp-btn fixed bottom-5 right-5 flex items-center gap-2 bg-green-500 text-white px-4 py-2 text-sm rounded-full shadow-lg z-50">
 
-Chat
+<i data-lucide="message-circle"></i>
+<span>Chat With us</span>
 
 </a>
 
+
 <script>
-    // SERVICES DROPDOWN (MOBILE FIX)
-const servicesToggle = document.getElementById("servicesToggle");
-const servicesMenu = document.getElementById("servicesMenu");
-const arrow = document.getElementById("arrow");
 
-servicesToggle?.addEventListener("click", () => {
-  servicesMenu.classList.toggle("hidden");
+let slides=document.querySelectorAll(".hero-slide");
 
-  if (servicesMenu.classList.contains("hidden")) {
-    arrow.textContent = "▼";
-  } else {
-    arrow.textContent = "▲";
-  }
-});
+let index=0;
 
-// MOBILE MENU
-const menuBtn = document.getElementById("menuBtn");
-const closeMenu = document.getElementById("closeMenu");
-const mobileMenu = document.getElementById("mobileMenu");
-const overlay = document.getElementById("overlay");
+setInterval(function(){
 
-menuBtn.addEventListener("click", () => {
-mobileMenu.classList.remove("-translate-x-full");
-overlay.classList.remove("hidden");
-});
+slides[index].classList.remove("active-slide");
 
-closeMenu.addEventListener("click", () => {
-mobileMenu.classList.add("-translate-x-full");
-overlay.classList.add("hidden");
-});
+index++;
 
-overlay.addEventListener("click", () => {
-mobileMenu.classList.add("-translate-x-full");
-overlay.classList.add("hidden");
-});
+if(index>=slides.length){
+index=0;
+}
+
+slides[index].classList.add("active-slide");
+
+},5000);
 
 lucide.createIcons();
 
 </script>
 
+
 </body>
 </html>
-
