@@ -78,10 +78,23 @@ Services <i data-lucide="chevron-down" class="w-4 h-4"></i>
 <div class="absolute left-0 top-full w-64 bg-white shadow rounded-lg p-3 
 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
 
-<a href="{% url 'incorporation' %}" class="block p-2 hover:bg-blue-50">US Incorporation</a>
-<a href="{% url 'bookkeeping' %}" class="block p-2 hover:bg-blue-50">Bookkeeping</a>
-<a href="{% url 'payroll' %}" class="block p-2 hover:bg-blue-50">Payroll</a>
-<a href="{% url 'tax_filing' %}" class="block p-2 hover:bg-blue-50">Tax Filing</a>
+<a href="{% url 'incorporation' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">US Incorporation</a>
+
+<a href="{% url 'bookkeeping' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Bookkeeping</a>
+
+<a href="{% url 'payroll' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Payroll Services</a>
+<a href="{% url 'management' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Management</a>
+
+<a href="{% url 'itin' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">ITIN Services</a>
+
+<a href="{% url 'cpa_letter' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">CPA Letter</a>
+
+<a href="{% url 'tax_filing' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">US Tax Filing</a>
+
+<a href="{% url 'finance_solutions' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Finance Solutions</a>
+
+<a href="{% url 'finance_analysis' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Finance Analysis</a>
+
 
 </div>
 </div>
@@ -162,10 +175,85 @@ class="fixed top-0 left-0 w-64 h-full bg-white shadow transform -translate-x-ful
 
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-black text-white py-10 text-center">
-© 2026 FAMT Global
+<footer class="bg-black text-white py-14 border-t border-gray-800 relative overflow-hidden">
+
+<!-- ANIMATED GLOW -->
+<div class="footer-glow top-0 left-0"></div>
+<div class="footer-glow bottom-0 right-0"></div>
+
+<div class="relative max-w-7xl mx-auto px-4 grid md:grid-cols-5 gap-10 text-sm">
+
+<!-- COMPANY -->
+<div>
+<h3 class="text-xl font-bold mb-4 text-white">FAMT Global</h3>
+<p class="text-gray-400 leading-relaxed">
+Premium finance, accounting, management, and taxation services for companies in the USA & worldwide.
+</p>
+</div>
+
+<!-- QUICK LINKS -->
+<div>
+<h3 class="font-semibold mb-4 text-white">Quick Links</h3>
+<ul class="space-y-2 text-gray-400">
+<li><a href="{% url 'home' %}" class="hover:text-blue-400 transition">Home</a></li>
+<li><a href="{% url 'about' %}" class="hover:text-blue-400 transition">About</a></li>
+<li><a href="#" class="hover:text-blue-400 transition">Services</a></li>
+<li><a href="{% url 'contact' %}" class="hover:text-blue-400 transition">Contact</a></li>
+</ul>
+</div>
+
+<!-- SERVICES -->
+<div>
+<h3 class="font-semibold mb-4 text-white">Our Services</h3>
+<ul class="space-y-2 text-gray-400">
+<li class="hover:translate-x-2 hover:text-blue-400 transition">Finance Consulting</li>
+<li class="hover:translate-x-2 hover:text-blue-400 transition">Accounting Services</li>
+<li class="hover:translate-x-2 hover:text-blue-400 transition">Business Management</li>
+<li class="hover:translate-x-2 hover:text-blue-400 transition">Taxation & Compliance</li>
+<li class="hover:translate-x-2 hover:text-blue-400 transition">Payroll Services</li>
+</ul>
+</div>
+
+<!-- SERVICE AREAS -->
+<div>
+<h3 class="font-semibold mb-4 text-white">Service Areas</h3>
+<ul class="space-y-2 text-gray-400">
+<li class="hover:translate-x-2 hover:text-blue-400 transition">USA</li>
+<li class="hover:translate-x-2 hover:text-blue-400 transition">Canada</li>
+<li class="hover:translate-x-2 hover:text-blue-400 transition">Australia</li>
+<li class="hover:translate-x-2 hover:text-blue-400 transition">Europe</li>
+<li class="hover:translate-x-2 hover:text-blue-400 transition">UK</li>
+<li class="hover:translate-x-2 hover:text-blue-400 transition">Middle East</li>
+</ul>
+</div>
+
+<!-- LOCATION -->
+<div>
+<h3 class="font-semibold mb-4 text-white">Corporate Office (USA)</h3>
+<p class="text-gray-400 leading-relaxed">
+Famt Global LLC<br>
+4041 Firefly Way<br>
+Ellicott City, MD 21042<br>
+USA
+</p>
+
+<p class="mt-3 text-gray-400 hover:text-blue-400 transition">📞 +91 99663 41359</p>
+<p class="text-gray-400 hover:text-blue-400 transition">✉️ info@famtglobal.com</p>
+</div>
+
+</div>
+
+<!-- DIVIDER -->
+<div class="mt-12 border-t border-gray-800"></div>
+
+<!-- COPYRIGHT -->
+<div class="text-center mt-6 text-gray-500 text-sm">
+© 2026 FAMT Global. All Rights Reserved.
+</div>
+
 </footer>
+
+
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/919966341359"
@@ -218,4 +306,4 @@ lucide.createIcons();
 
 </body>
 </html>
-```
+
