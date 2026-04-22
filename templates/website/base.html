@@ -128,6 +128,7 @@ box-shadow:0 0 0 2px rgba(37,99,235,0.2);
 
 </style>
 
+
 </head>
 
 <!-- TOP BAR -->
@@ -151,64 +152,37 @@ box-shadow:0 0 0 2px rgba(37,99,235,0.2);
 </div>
 
 
-<!-- NAVBAR -->
-<header class="sticky top-0 z-50 backdrop-blur-lg bg-white/80 border-b border-gray-200 shadow-sm">
+<header class="sticky top-0 z-50 bg-white shadow">
 
 <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
 
-<!-- LOGO -->
-<div class="flex items-center space-x-3 group">
+  <!-- LOGO -->
+  <div class="flex items-center gap-3">
+    <a href="{% url 'home' %}">
+      <img src="{% static 'image/famt3.png' %}" class="w-10">
+    </a>
+    <div>
+      <h1 class="font-bold text-lg">FAMT Global</h1>
+      <p class="text-xs text-gray-500">Finance • Accounting • Management • Taxation</p>
+    </div>
+  </div>
 
-<a href="{% url 'home' %}" class="group">
-  <img src="{% static 'image/famt3.png' %}" 
-       class="w-11 transition duration-300 group-hover:scale-110">
-</a>
+  <!-- DESKTOP MENU -->
+  <nav class="hidden md:flex gap-6 font-medium items-center">
 
-<div class="flex flex-col leading-tight">
+    <a href="{% url 'home' %}" class="hover:text-blue-600">Home</a>
+    <a href="{% url 'about' %}" class="hover:text-blue-600">About</a>
 
-<h1 class="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition">
-FAMT Global
-</h1>
+    <!-- SERVICES DROPDOWN (DESKTOP) -->
+    <div class="relative group">
+      <button class="flex items-center gap-1 hover:text-blue-600">
+        Services 
+      </button>
 
-<div class="text-xs text-gray-500">
-Finance • Accounting • Management • Taxation
-</div>
+      <div class="absolute left-0 top-full w-60 bg-white shadow-lg rounded-lg p-2 
+      opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
 
-</div>
-
-</div>
-
-
-<!-- MENU -->
-<nav class="hidden md:flex items-center space-x-8 font-medium">
-
-<a href="{% url 'home' %}" 
-   class="relative hover:text-blue-600 transition">
-   Home
-   <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-600 transition-all group-hover:w-full"></span>
-</a>
-
-<a href="{% url 'about' %}" class="hover:text-blue-600 transition">
-About
-</a>
-
-
-<div class="relative group inline-block">
-
-<button class="flex items-center gap-1 hover:text-blue-600 transition">
-Services
-<i data-lucide="chevron-down" class="w-4 h-4"></i>
-</button>
-
-<!-- HOVER BRIDGE -->
-<div class="absolute left-0 top-full w-full h-2"></div>
-
-<!-- DROPDOWN -->
-<div class="absolute left-0 top-full w-72 bg-white shadow-xl rounded-xl p-3 
-opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-transition duration-200 z-50 border">
-
-<a href="{% url 'incorporation' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">US Incorporation</a>
+        <a href="{% url 'incorporation' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">US Incorporation</a>
 
 <a href="{% url 'bookkeeping' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Bookkeeping</a>
 
@@ -225,28 +199,64 @@ transition duration-200 z-50 border">
 
 <a href="{% url 'finance_analysis' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Finance Analysis</a>
 
-</div>
+      </div>
+    </div>
+
+    <a href="{% url 'who_we_help' %}" class="hover:text-blue-600">Who We Help</a>
+    <a href="{% url 'contact' %}" class="hover:text-blue-600">Contact</a>
+
+  </nav>
+
+  <!-- RIGHT SIDE -->
+  <div class="flex items-center gap-3">
+
+    <!-- CTA -->
+    <a href="{% url 'contact' %}" 
+    class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg">
+    Get Consultation
+    </a>
+
+    <!-- MOBILE BUTTON -->
+    <button id="menuBtn" class="md:hidden text-2xl">
+      ☰
+    </button>
+
+  </div>
 
 </div>
-<a href="{% url 'who_we_help' %}" class="hover:text-blue-600 transition">
-Who We Help
-</a>
 
-<a href="{% url 'contact' %}" class="hover:text-blue-600 transition">
-Contact
-</a>
+<!-- MOBILE MENU -->
+<div id="mobileMenu" class="hidden bg-white border-t">
 
-</nav>
+  <a href="{% url 'home' %}" class="block px-4 py-3 border-b">Home</a>
+  <a href="{% url 'about' %}" class="block px-4 py-3 border-b">About</a>
+
+  <!-- MOBILE SERVICES -->
+  <button id="serviceToggle" class="w-full text-left px-4 py-3 border-b font-semibold">
+    Services ▼
+  </button>
+
+  <div id="mobileServices" class="hidden bg-gray-50">
+
+    <a href="{% url 'incorporation' %}" class="block px-6 py-2 border-b">US Incorporation</a>
+    <a href="{% url 'bookkeeping' %}" class="block px-6 py-2 border-b">Bookkeeping</a>
+    <a href="{% url 'payroll' %}" class="block px-6 py-2 border-b">Payroll</a>
+    <a href="{% url 'management' %}" class="block px-6 py-2 border-b">Management</a>
+    <a href="{% url 'itin' %}" class="block px-6 py-2 border-b">ITIN</a>
+    <a href="{% url 'tax_filing' %}" class="block px-6 py-2 border-b">Tax Filing</a>
+
+  </div>
+
+  <a href="{% url 'who_we_help' %}" class="block px-4 py-3 border-b">Who We Help</a>
+  <a href="{% url 'contact' %}" class="block px-4 py-3">Contact</a>
+
+</div>
+
+</header>
 
 
 <!-- CTA BUTTON -->
-<div class="hidden md:block">
-<a href="{% url 'contact' %}" 
-   class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-5 py-2 rounded-full font-semibold shadow hover:scale-105 transition">
 
-Get Consultation
-</a>
-</div>
 
 </div>
 
@@ -763,6 +773,23 @@ class="whatsapp-btn fixed bottom-5 right-5 flex items-center gap-2 bg-green-500 
 <span>Chat With us</span>
 
 </a>
+<script>
+// MOBILE MENU TOGGLE
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
+// SERVICES DROPDOWN (MOBILE)
+const serviceToggle = document.getElementById("serviceToggle");
+const mobileServices = document.getElementById("mobileServices");
+
+serviceToggle.addEventListener("click", () => {
+  mobileServices.classList.toggle("hidden");
+});
+</script>
 
 
 <script>

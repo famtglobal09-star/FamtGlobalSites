@@ -12,8 +12,8 @@
 <meta name="author" content="FAMT Global">
 <meta name="robots" content="index, follow">
 
-<!-- MOBILE OPTIMIZATION -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 
 <!-- CANONICAL -->
 <link rel="canonical" href="https://famtglobal.com/">
@@ -59,7 +59,7 @@
 }
 </script>
 
-<title>FAMT Global | Finance Accounting Management & Taxation</title>
+<title>FAMTGlobal | Finance Accounting Management & Taxation</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
@@ -137,6 +137,7 @@ background-color: #16a34a;
 </style>
 
 </head>
+<body>
 
 <!-- TOP BAR -->
 <div class="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white text-sm">
@@ -234,9 +235,7 @@ transition duration-200 z-50 border">
 <a href="{% url 'finance_analysis' %}" class="block px-4 py-2 rounded-lg hover:bg-blue-50">Finance Analysis</a>
 
 </div>
-<button id="menuBtn" class="md:hidden text-gray-800">
-  <i data-lucide="menu"></i>
-</button>
+
 
 </div>
 <a href="{% url 'who_we_help' %}" class="hover:text-blue-600 transition">
@@ -258,26 +257,61 @@ Contact
 Get Consultation
 </a>
 </div>
+<button id="menuBtn" class="md:hidden text-2xl">
+    ☰
+  </button>
+
 
 </div>
 
 </header>
-<!-- MOBILE MENU -->
-<div id="mobileMenu" class="fixed top-0 left-0 w-64 h-full bg-white shadow transform -translate-x-full transition duration-300 z-50">
-
-  <div class="p-4 flex justify-between border-b">
-    <b>Menu</b>
-    <button id="closeMenu">✕</button>
-  </div>
-
-  <a href="{% url 'home' %}" class="block p-4 border-b">Home</a>
-  <a href="{% url 'about' %}" class="block p-4 border-b">About</a>
-  <a href="{% url 'contact' %}" class="block p-4 border-b">Contact</a>
-
-</div>
+<!-- MOBILE MENU BUTTON -->
+<button id="menuBtn" class="md:hidden text-2xl">
+  
+</button>
 
 <!-- OVERLAY -->
 <div id="overlay" class="fixed inset-0 bg-black/50 hidden z-40"></div>
+
+<!-- MOBILE MENU -->
+<div id="mobileMenu"
+     class="fixed top-0 left-0 w-72 h-full bg-white shadow-lg z-50
+            transform -translate-x-full transition-transform duration-300">
+
+  <!-- HEADER -->
+  <div class="p-4 flex justify-between items-center border-b">
+    <b class="text-lg">Menu</b>
+    <button id="closeMenu" class="text-xl">✕</button>
+  </div>
+
+  <!-- LINKS -->
+  <div class="overflow-y-auto h-full pb-10">
+
+    <a href="{% url 'home' %}" class="block p-4 border-b hover:bg-gray-50">Home</a>
+    <a href="{% url 'about' %}" class="block p-4 border-b hover:bg-gray-50">About</a>
+
+    <!-- SERVICES TITLE -->
+    <div class="p-4 border-b font-semibold text-gray-700 bg-gray-50">
+      Services
+    </div>
+
+    <a href="{% url 'incorporation' %}" class="block p-4 pl-6 border-b hover:bg-gray-50">US Incorporation</a>
+    <a href="{% url 'bookkeeping' %}" class="block p-4 pl-6 border-b hover:bg-gray-50">Bookkeeping</a>
+    <a href="{% url 'payroll' %}" class="block p-4 pl-6 border-b hover:bg-gray-50">Payroll Services</a>
+    <a href="{% url 'management' %}" class="block p-4 pl-6 border-b hover:bg-gray-50">Management</a>
+    <a href="{% url 'itin' %}" class="block p-4 pl-6 border-b hover:bg-gray-50">ITIN Services</a>
+    <a href="{% url 'cpa_letter' %}" class="block p-4 pl-6 border-b hover:bg-gray-50">CPA Letter</a>
+    <a href="{% url 'tax_filing' %}" class="block p-4 pl-6 border-b hover:bg-gray-50">US Tax Filing</a>
+    <a href="{% url 'finance_solutions' %}" class="block p-4 pl-6 border-b hover:bg-gray-50">Finance Solutions</a>
+    <a href="{% url 'finance_analysis' %}" class="block p-4 pl-6 border-b hover:bg-gray-50">Finance Analysis</a>
+
+    <a href="{% url 'who_we_help' %}" class="block p-4 border-b hover:bg-gray-50">Who We Help</a>
+    <a href="{% url 'contact' %}" class="block p-4 border-b hover:bg-gray-50">Contact</a>
+
+  </div>
+</div>
+<!-- OVERLAY -->
+<div id="overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:40;"></div>
 <!-- CONTENT -->
 {% block content %}
 {% endblock %}
@@ -368,6 +402,47 @@ USA
 </div>
 
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+  const menu = document.getElementById("mobileMenu");
+  const openBtn = document.getElementById("menuBtn");
+  const closeBtn = document.getElementById("closeMenu");
+  const overlay = document.getElementById("overlay");
+
+  if (!menu || !openBtn || !closeBtn || !overlay) return;
+
+  // OPEN MENU
+  openBtn.onclick = () => {
+    menu.style.transform = "translateX(0)";
+    overlay.style.display = "block";
+  };
+
+  // CLOSE MENU
+  function closeMenu() {
+    menu.style.transform = "translateX(-100%)";
+    overlay.style.display = "none";
+  }
+
+  closeBtn.onclick = closeMenu;
+  overlay.onclick = closeMenu;
+
+  // SWIPE CLOSE (MOBILE)
+  let startX = 0;
+
+  menu.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+  });
+
+  menu.addEventListener("touchmove", (e) => {
+    if (e.touches[0].clientX < startX - 50) {
+      closeMenu();
+    }
+  });
+
+  // INIT ICONS
+  lucide.createIcons();
+});
+</script>
 </body>
 </html>
